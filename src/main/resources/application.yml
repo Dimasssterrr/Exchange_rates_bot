@@ -1,0 +1,30 @@
+telegram:
+  bot:
+    username: ${BOT_NAME}
+    token: ${BOT_TOKEN}
+    notify:
+      delay:
+        value: 10
+        unit: MINUTES
+
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/exchange_rates?useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Dimater12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+centralBank:
+  url: https://cbr.ru/scripts/XML_daily.asp
+app:
+  mailing time : "0 00 11 * * ?"
+  rate update frequency: 3600000
+  notification time: "0 20 11 * * ?"
